@@ -23,6 +23,11 @@ public class Calculator {
     private int getSum(String[] numbers) throws Exception {
         findDangerousInput(numbers);
         int sum = 0;
+        sum = calculateValues(numbers, sum);
+        return sum;
+    }
+
+    private int calculateValues(String[] numbers, int sum) {
         for (String number : numbers) {
             if(parseStringToInt(number) > 1000) {
                 continue;
