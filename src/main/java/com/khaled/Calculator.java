@@ -4,7 +4,7 @@ package com.khaled;
  * Created by Adam on 2017-06-27.
  */
 public class Calculator {
-    public int calculate(String input) {
+    public int calculate(String input) throws Exception {
 
         final String delimiter = ",|\n";
         String[] numbers = input.split(delimiter);
@@ -20,13 +20,18 @@ public class Calculator {
         }
     }
 
-    private int getSum(String[] numbers) {
+    private int getSum(String[] numbers) throws Exception {
+        for (String number : numbers) {
+            if(parseStringToInt(number) < 0) {
+                throw new Exception("Negative input!");
+            }
+        }
+
+
         int sum = 0;
         for (String number : numbers) {
             sum += parseStringToInt(number);
         }
-
-
         return sum;
     }
 
