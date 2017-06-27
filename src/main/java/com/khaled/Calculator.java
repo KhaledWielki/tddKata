@@ -24,6 +24,9 @@ public class Calculator {
         findDangerousInput(numbers);
         int sum = 0;
         for (String number : numbers) {
+            if(parseStringToInt(number) > 1000) {
+                continue;
+            }
             sum += parseStringToInt(number);
         }
         return sum;
