@@ -1,7 +1,5 @@
+/target/
 /.project
 /.classpath
 /.settings/
-.idea/
-kataaa.iml/
-.gitignore
-src/
+
