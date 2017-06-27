@@ -21,18 +21,20 @@ public class Calculator {
     }
 
     private int getSum(String[] numbers) throws Exception {
-        for (String number : numbers) {
-            if(parseStringToInt(number) < 0) {
-                throw new Exception("Negative input!");
-            }
-        }
-
-
+        findDangerousInput(numbers);
         int sum = 0;
         for (String number : numbers) {
             sum += parseStringToInt(number);
         }
         return sum;
+    }
+
+    private void findDangerousInput(String[] numbers) throws Exception {
+        for (String number : numbers) {
+            if(parseStringToInt(number) < 0) {
+                throw new Exception("Negative input!");
+            }
+        }
     }
 
     private boolean isEmpty(String input) {
