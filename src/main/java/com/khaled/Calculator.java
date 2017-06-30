@@ -29,6 +29,11 @@ public class Calculator {
     }
 
     private int countSum(String[] numbers, int sum) throws Exception {
+        sum = calculateValues(numbers, sum);
+        return sum;
+    }
+
+    private int calculateValues(String[] numbers, int sum) {
         for (String number : numbers) {
             if(transformInputToInt(number) > 1000) {
                 continue;
