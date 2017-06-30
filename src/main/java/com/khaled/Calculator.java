@@ -4,8 +4,11 @@ package com.khaled;
  * Created by Adam on 2017-06-27.
  */
 public class Calculator {
+
+    public static final String delimiter = ",|\n";
+
     public int calculate(String input) {
-        String numbers[] = input.split(",|\n");
+        String numbers[] = input.split(delimiter);
         if(isEmpty(input)) {
             return 0;
         }
