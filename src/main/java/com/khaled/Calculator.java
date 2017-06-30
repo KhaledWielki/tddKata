@@ -5,9 +5,17 @@ package com.khaled;
  */
 public class Calculator {
     public int calculate(String input) {
-        if(input.isEmpty()) {
+        if(isEmpty(input)) {
             return 0;
         }
+        return transformStringToInteger(input);
+    }
+
+    private boolean isEmpty(String input) {
+        return input.isEmpty();
+    }
+
+    private int transformStringToInteger(String input) {
         return Integer.parseInt(input);
     }
 }
