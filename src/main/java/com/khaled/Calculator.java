@@ -6,7 +6,8 @@ package com.khaled;
 public class Calculator {
     public int calculate(String input) {
 
-        String numbers[] = input.split(",|\n");
+        final String deliminator = ",|\n";
+        String numbers[] = input.split(deliminator);
 
         if (isEmpty(input)) {
             return 0;
