@@ -7,7 +7,7 @@ public class Calculator {
 
     public static final String delimiter = ",|\n";
 
-    public int calculate(String input) {
+    public int calculate(String input) throws Exception {
         String numbers[] = input.split(delimiter);
         if(isEmpty(input)) {
             return 0;
@@ -20,13 +20,20 @@ public class Calculator {
         }
     }
 
-    private int getSum(String[] numbers) {
+    private int getSum(String[] numbers) throws Exception {
         int sum = 0;
         sum = countSum(numbers, sum);
         return sum;
     }
 
-    private int countSum(String[] numbers, int sum) {
+    private int countSum(String[] numbers, int sum) throws Exception {
+        for (String number : numbers) {
+            if(transformStringToInt(number) < 0){
+                throw new Exception("Negative number!");
+            }
+        }
+
+
         for (String number : numbers) {
             sum += transformStringToInt(number);
         }

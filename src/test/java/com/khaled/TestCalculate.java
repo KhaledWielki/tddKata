@@ -16,27 +16,32 @@ public class TestCalculate {
     }
 
     @Test
-    public void emptyStringReturnsZero() {
+    public void emptyStringReturnsZero() throws Exception {
         Assert.assertEquals(calculator.calculate(""), 0);
     }
 
     @Test
-    public void singleValueIsReplied() {
+    public void singleValueIsReplied() throws Exception {
         Assert.assertEquals(calculator.calculate("1"), 1);
     }
 
     @Test
-    public void twoNumbersCommaDelimitedReturnSum() {
+    public void twoNumbersCommaDelimitedReturnSum() throws Exception {
         Assert.assertEquals(calculator.calculate("1,2"), 3);
     }
 
     @Test
-    public void twoNumbersNewLineDelimitedRetrunSum() {
+    public void twoNumbersNewLineDelimitedRetrunSum() throws Exception {
         Assert.assertEquals(calculator.calculate("1\n2"), 3);
     }
 
     @Test
-    public void threeNumbersDelimitedBothWaysReturnSum() {
+    public void threeNumbersDelimitedBothWaysReturnSum() throws Exception {
         Assert.assertEquals(calculator.calculate("1,2\n3"), 6);
+    }
+
+    @Test(expected = Exception.class)
+    public void negativeInutShouldReturnException() throws Exception {
+        calculator.calculate("-1");
     }
 }
