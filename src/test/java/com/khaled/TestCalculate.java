@@ -24,4 +24,9 @@ public class TestCalculate {
     public void singleValueIsReplied() {
         Assert.assertEquals(calculator.calculate("1"), 1);
     }
+
+    @Test
+    public void twoNumbersCommaDelimitedReturnsSum() {
+        Assert.assertEquals(calculator.calculate("1,2"), 3);
+    }
 }

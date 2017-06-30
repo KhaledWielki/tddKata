@@ -4,18 +4,26 @@ package com.khaled;
  * Created by Adam on 2017-06-27.
  */
 public class Calculator {
-    public int calculate(String string) {
-        if(isEmpty(string)) {
+    public int calculate(String input) {
+
+        String numbers[] = input.split(",");
+
+        if(isEmpty(input)) {
             return 0;
         }
-        return transformStringToInt(string);
+        if(numbers.length == 1) {
+            return transforminputToInt(input);
+        }
+        else  {
+            return transforminputToInt(numbers[0]) + transforminputToInt(numbers[1]);
+        }
     }
 
-    private boolean isEmpty(String string) {
-        return string.isEmpty();
+    private boolean isEmpty(String input) {
+        return input.isEmpty();
     }
 
-    private int transformStringToInt(String string) {
-        return Integer.parseInt(string);
+    private int transforminputToInt(String input) {
+        return Integer.parseInt(input);
     }
 }
