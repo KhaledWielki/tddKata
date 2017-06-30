@@ -21,7 +21,12 @@ public class Calculator {
     }
 
     private int getSum(String[] numbers) {
-        return transformStringToInteger(numbers[0]) + transformStringToInteger(numbers[1]);
+        int sum = 0;
+        for (String number : numbers) {
+            sum += transformStringToInteger(number);
+        }
+
+        return sum;
     }
 
     private boolean isEmpty(String input) {
