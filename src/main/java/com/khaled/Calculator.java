@@ -27,17 +27,19 @@ public class Calculator {
     }
 
     private int countSum(String[] numbers, int sum) throws Exception {
+        findDangerousInput(numbers);
+        for (String number : numbers) {
+            sum += transformStringToInteger(number);
+        }
+        return sum;
+    }
+
+    private void findDangerousInput(String[] numbers) throws Exception {
         for (String number : numbers) {
             if(transformStringToInteger(number) < 0) {
                 throw new Exception("Negative number!");
             }
         }
-
-
-        for (String number : numbers) {
-            sum += transformStringToInteger(number);
-        }
-        return sum;
     }
 
     private boolean isEmpty(String input) {
