@@ -23,7 +23,11 @@ public class Calculator {
     }
 
     private int getSum(String[] numbers) {
-        return transforminputToInt(numbers[0]) + transforminputToInt(numbers[1]);
+        int sum = 0;
+        for (String number : numbers) {
+            sum += transforminputToInt(number);
+        }
+        return sum;
     }
 
     private boolean isEmpty(String input) {
