@@ -24,6 +24,11 @@ public class Calculator {
 
     private int getSum(String[] numbers) {
         int sum = 0;
+        sum = countSum(numbers, sum);
+        return sum;
+    }
+
+    private int countSum(String[] numbers, int sum) {
         for (String number : numbers) {
             sum += transforminputToInt(number);
         }
