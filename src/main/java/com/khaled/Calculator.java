@@ -15,8 +15,12 @@ public class Calculator {
             return transformStringToInteger(input);
         }
         else {
-            return transformStringToInteger(numbers[0]) + transformStringToInteger(numbers[1]);
+            return getSum(numbers);
         }
+    }
+
+    private int getSum(String[] numbers) {
+        return transformStringToInteger(numbers[0]) + transformStringToInteger(numbers[1]);
     }
 
     private boolean isEmpty(String input) {
