@@ -29,6 +29,9 @@ public class Calculator {
     private int countSum(String[] numbers, int sum) throws Exception {
         findDangerousInput(numbers);
         for (String number : numbers) {
+            if(transformStringToInt(number) > 1000) {
+                continue;
+            }
             sum += transformStringToInt(number);
         }
         return sum;

@@ -44,4 +44,10 @@ public class TestCalculate {
     public void negativeInutShouldReturnException() throws Exception {
         calculator.calculate("-1");
     }
+
+    @Test
+    public void ingnoresNumbersGreaterThan1000() throws Exception {
+        Assert.assertEquals(calculator.calculate("10,10,1400"), 20);
+
+    }
 }
