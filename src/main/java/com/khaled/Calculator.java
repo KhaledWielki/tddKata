@@ -7,7 +7,7 @@ public class Calculator {
 
     public static final String deliminator = ",|\n";
 
-    public int calculate(String input) {
+    public int calculate(String input) throws Exception {
 
         String numbers[] = input.split(deliminator);
 
@@ -15,22 +15,25 @@ public class Calculator {
             return 0;
         }
         if(numbers.length == 1) {
-            return transforminputToInt(input);
+            return transformInputToInt(input);
         }
         else  {
             return getSum(numbers);
         }
     }
 
-    private int getSum(String[] numbers) {
+    private int getSum(String[] numbers) throws Exception {
         int sum = 0;
         sum = countSum(numbers, sum);
         return sum;
     }
 
-    private int countSum(String[] numbers, int sum) {
+    private int countSum(String[] numbers, int sum) throws Exception {
         for (String number : numbers) {
-            sum += transforminputToInt(number);
+            if(transformInputToInt(number) > 1000) {
+                continue;
+            }
+            sum += transformInputToInt(number);
         }
         return sum;
     }
@@ -39,7 +42,7 @@ public class Calculator {
         return input.isEmpty();
     }
 
-    private int transforminputToInt(String input) {
+    private int transformInputToInt(String input) {
         return Integer.parseInt(input);
     }
 }

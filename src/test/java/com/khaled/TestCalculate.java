@@ -16,27 +16,32 @@ public class TestCalculate {
     }
 
     @Test
-    public void emptyStringReturnsZero() {
+    public void emptyStringReturnsZero() throws Exception {
         Assert.assertEquals(calculator.calculate(""), 0);
     }
 
     @Test
-    public void singleValueIsReplied() {
+    public void singleValueIsReplied() throws Exception {
         Assert.assertEquals(calculator.calculate("1"), 1);
     }
 
     @Test
-    public void twoNumbersCommaDelimitedReturnsSum() {
+    public void twoNumbersCommaDelimitedReturnsSum() throws Exception {
         Assert.assertEquals(calculator.calculate("1,2"), 3);
     }
 
     @Test
-    public void twoNumbersDelimitedWithNewLiteReturnsSum() {
+    public void twoNumbersDelimitedWithNewLiteReturnsSum() throws Exception {
         Assert.assertEquals(calculator.calculate("1\n2"), 3);
     }
 
     @Test
-    public void threeNumbersDelimitedWithBothWaysReturnSum() {
+    public void threeNumbersDelimitedWithBothWaysReturnSum() throws Exception {
         Assert.assertEquals(calculator.calculate("1\n2,3"), 6);
+    }
+
+    @Test
+    public void ignoresNumbersGreaterThan1000() throws Exception {
+        Assert.assertEquals(calculator.calculate("10,10,2000"), 20);
     }
 }
