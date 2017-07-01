@@ -5,11 +5,17 @@ package com.khaled;
  */
 public class Calculator {
     public int calculate(String input) {
+
+        String numbers[] = input.split(",");
+
         if(isEmpty(input)) {
             return 0;
         }
-        else {
+        if(numbers.length == 1) {
             return transformStringToInt(input);
+        }
+        else {
+            return transformStringToInt(numbers[0]) + transformStringToInt(numbers[1]);
         }
     }
 

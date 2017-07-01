@@ -23,6 +23,11 @@ public class TestCalculate {
     @Test
     public void singleValueIsReplied() {
         Assert.assertEquals(calculator.calculate("1"), 1);
+    }
+
+    @Test
+    public void twoNumbersWithCommaDelimitedReturnSum() {
+        Assert.assertEquals(calculator.calculate("1,2"), 3);
 
     }
 }
