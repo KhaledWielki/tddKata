@@ -1,5 +1,6 @@
 package com.khaled;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 /**
@@ -7,9 +8,21 @@ import org.junit.Assert;
  */
 public class TestCalculate {
 
+    Calculator calculator;
+
+    @Before
+    public void init() {
+        calculator = new Calculator();
+    }
+
     @Test
     public void emptyStringReturnsZero() {
-        Calculator calculator = new Calculator();
         Assert.assertEquals(calculator.calculate(""), 0);
+    }
+
+    @Test
+    public void singleValueIsReplied() {
+        Assert.assertEquals(calculator.calculate("1"), 1);
+
     }
 }
