@@ -34,4 +34,9 @@ public class TestCalculate {
     public void twoNumbersWithNewLineDelimitedReturnSum() {
         Assert.assertEquals(calculator.calculate("1\n2"), 3);
     }
+
+    @Test
+    public void threeNumbersDelimitedInBothWaysReturnSum() {
+        Assert.assertEquals(calculator.calculate("1\n2,3"), 6);
+    }
 }

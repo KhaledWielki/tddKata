@@ -23,7 +23,11 @@ public class Calculator {
     }
 
     private int getSum(String[] numbers) {
-        return transformStringToInt(numbers[0]) + transformStringToInt(numbers[1]);
+        int sum = 0;
+        for (String number : numbers) {
+            sum += transformStringToInt(number);
+        }
+        return sum;
     }
 
     private int transformStringToInt(String input) {
